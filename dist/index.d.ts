@@ -1,3 +1,4 @@
 import type { WalletInit } from '@web3-onboard/common';
-declare function argent(): WalletInit;
+import type { IArgentLoginOptions } from '@argent/login';
+declare function argent(walletConnect: IArgentLoginOptions["walletConnect"]): WalletInit;
 export default argent;

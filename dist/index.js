@@ -1,4 +1,4 @@
-function argent() {
+function argent(walletConnect) {
     return () => ({
         label: 'Argent',
         getIcon: async () => 'https://images.prismic.io/argentwebsite/313db37e-055d-42ee-9476-a92bda64e61d_logo.svg?auto=format%2Ccompress&fit=max&q=50',
@@ -9,6 +9,7 @@ function argent() {
             const ethereumProvider = await getEthereumProvider({
                 chainId: parseInt(chain.id),
                 rpcUrl: chain.rpcUrl,
+                walletConnect,
             });
             await ethereumProvider.enable();
             const provider = createEIP1193Provider(ethereumProvider, {
